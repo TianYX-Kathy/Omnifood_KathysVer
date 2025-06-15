@@ -1,0 +1,741 @@
+/* ******************************* */
+/* header section */
+/* ******************************* */
+
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdf2e9;
+
+    height: 9.6rem;
+    padding: 0 4.8rem;
+    /*为了隐藏移动端导航栏，需要设置相对定位（main-nav设置了绝对定位）*/
+    position: relative;  
+}
+
+.logo {
+    height: 2.4rem;
+}
+
+/* ******************************* */
+/* header nav section */
+/* ******************************* */
+
+.btn-mobile-nav{
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: block;
+    z-index: 3;
+    
+}
+
+.icon-mobile-nav{
+    height: 4.8rem;
+    width: 4.8rem;
+    color: #333;
+}
+
+.icon-mobile-nav[name="menu-outline"]{
+    display: none;
+}
+
+.icon-mobile-nav[name="close-outline"]{
+    display: none;
+}
+
+/* 粘滞导航栏 */
+.sticky{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    z-index: 999;
+    box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.06);
+    
+
+}
+.header .main-nav {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: flex-end; /* 使导航内容靠左对齐 */
+    align-items: center; /* 保持垂直居中 */
+}
+
+
+
+
+.main-nav-list{
+    list-style: None;
+    display: flex;
+    gap: 3.2rem;
+    align-items: center;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.8rem;
+    transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+    color: #cf711f;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+    background-color: #e67e22;
+    color: #fff;
+    padding: 1.2rem 2.4rem;
+    border-radius: 9px;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+    background-color: #cf711f;
+}
+
+/* ******************************* */
+/* hero section */
+/* ******************************* */
+
+.section-hero {
+    padding: 4.8rem 3.2rem;  /* 添加上下内边距和左右内边距 */
+    max-width: 150rem;  /* 设置最大宽度 */
+    margin: 9.6rem auto 0 auto;    /* 水平居中 */
+    
+}
+
+.hero {
+    max-width: 120rem;  /* 设置最大宽度 */
+    margin: 0 auto;     /* 水平居中 */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 9.6rem;
+}
+
+.hero-description {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 4.8rem;
+}
+
+
+.hero-img {
+    width: 100%
+}
+
+
+
+
+/* ******************************* */
+/* section-featured */
+/* ******************************* */
+.section-featured{
+    padding: 4.8rem 0;
+    max-width: 100rem;  /* 设置最大宽度 */
+    margin: 0 auto;     /* 水平居中 */
+}    
+
+.heading-featured-in{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.75px;
+    margin-bottom: 2.4rem;
+    text-align: center;
+    color:#999;
+}
+
+.logos{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3.2rem;
+}
+
+.logos img{
+    height: 3.2rem;
+    filter: brightness(0);
+    opacity: 50%;
+}
+
+/* ******************************* */
+/* how it works section */
+/* ******************************* */
+
+.section-how {
+    padding: 9.6rem 8rem;
+    /* background-color: #fff; */
+    max-width: 130rem;  /* 设置最大宽度 */
+    margin: 0 auto;     /* 水平居中 */  
+}
+
+.grid--center-v{
+    align-items: center;
+}
+
+.step-number {
+    font-size: 8.6rem;
+    font-weight: 600;
+    color: #ddd;
+    margin-bottom: 1.2rem;
+}
+
+.step-description { 
+    font-size: 2rem;
+    line-height: 1.6;
+}
+
+.step-img-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.step-img-box::before,
+.step-img-box::after{
+    content: "";
+    display: block;
+
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+/* 第一步：top: 50% 和 left: 50% 将元素的左上角定位到父容器的中心
+第二步：transform: translate(-50%, -50%) 将元素向左上方移动自身宽度和高度的一半
+最终效果：元素的中心点与父容器的中心点重合 */
+}
+
+.step-img-box::before{
+
+    width: 40%;
+    padding-bottom: 40%;
+    z-index: -1;
+    background-color: #f8d8bd;
+}
+
+.step-img-box::after{
+    width: 55%;
+    padding-bottom: 55%;
+    z-index: -2;
+    background-color: #fae5d3;
+}
+.step-img {
+    width: 30%;
+}
+
+/* ******************************* */
+/* meals section */
+/* ******************************* */
+
+.section-meals{
+    padding: 9.6rem 8rem;
+    max-width: 130rem;  /* 设置最大宽度 */
+    margin: 0 auto;     /* 水平居中 */
+}
+
+.meal{
+    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s;
+    
+}
+
+.meal:hover{
+    transform: translateY(-1.2rem);
+    box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.meal-img{
+    width: 100%;
+}
+
+.meal-content{
+    padding: 0rem 4.8rem 4.8rem 4.8rem;
+}
+
+.meals-title{
+    /* text-align: center; */
+    font-size: 2.4rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 3.2rem;
+
+}
+
+.meal-tag{
+    background-color: #51cf66;
+    color: #555;
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-radius: 12px;
+    margin: 1.2rem 0;
+
+}
+
+.tag-vegetarian{
+    background-color: #51cf66;
+}
+
+.tag-paleo{
+    background-color: #ffd43b;
+}
+
+.tag-vegan{
+    background-color: #34d399;
+}
+
+
+
+
+.meal-attributes{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 1.6rem;
+ 
+}
+
+.meal-attribute{
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+}
+
+.meal-icon{
+    height: 2.4rem;
+    width: 2.4rem;
+    color: #e67e22;
+}
+
+.list{
+    list-style: none;
+}
+
+.list-item{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    line-height: 1.2;
+    height: 3.2rem;
+}
+
+.list-icon{
+    width: 3rem;
+    height: 3rem;
+    color: #e67e22;
+}
+
+.all-recipes{
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.link:link,
+.link:visited{
+    display: inline-block;
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    border-bottom: 1px solid currentColor;
+    transition: all 0.3s;
+}
+
+.link:hover,
+.link:active{
+    color: #cf711f;
+    border-bottom: 1px solid transparent;
+}
+
+/* ******************************* */
+/* testimonials section */
+/* ******************************* */
+
+.section-testimonials{
+    padding: 9.6rem 8rem;
+    max-width: 130rem;  /* 设置最大宽度 */
+    margin: 0 auto;     /* 水平居中 */
+    align-items: center;
+}
+
+.container{
+    padding: 4.8rem 0;
+    max-width: 130rem;  /* 设置最大宽度 */
+    margin: 0 auto;     /* 水平居中 */
+}
+
+.testimonials-container{
+    padding: 9.6rem 3.2rem;
+    background-color: #fdf2e9;
+}
+
+
+.testimonials{
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+    row-gap: 4.8rem;
+    /* column-gap: 8rem; */
+}
+
+.testimonial-img{
+    width: 6.4rem;
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+}
+
+.testimonial-text{
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 1.6rem;
+}
+
+.testimonial-name{
+    font-size: 1.6rem;
+    color: #777;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    align-items: center;
+}
+
+.gallery-item{
+    /* display: block; */
+    /* grid-template-columns: 1fr 1fr; */
+    overflow: hidden;
+}
+
+.gallery-img{
+    display: block;
+    width: 100%; 
+    transition: all 0.2s;
+}
+
+.gallery-item img:hover{
+    transform: scale(1.1);
+}
+
+/* ******************************* */
+/* pricing section */
+/* ******************************* */
+
+.section-pricing{
+    padding: 9.6rem 8rem;
+}
+
+.pricing-plan{
+    background-color: #f8d8bd;
+    border-radius: 12px;
+    padding: 4.8rem;
+    width: 75%;
+}
+
+.pricing-plan--starter{
+    justify-self:end;
+}
+
+.plan-header{
+    text-align: center;
+    margin-bottom: 4.8rem;
+}
+
+
+.plan-name{
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #cf711f;
+    margin-bottom: 3.2rem;
+    text-transform: uppercase;
+}
+
+.plan-price{
+    font-size: 6.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 3.2rem;
+}
+
+.plan-price span{
+    font-size: 3.2rem;
+    font-weight: 500;
+    margin-right: 1.6rem;
+}
+
+
+.plan-text{
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.plan-sign-up{
+    text-align: center;
+    /* 底部对齐 */
+    margin-top: auto;
+    padding-top: 4.8rem;
+}
+
+.pricing-plan--complete{
+    position: relative;
+    padding: 4.8rem;
+    overflow: hidden;  
+}
+
+.pricing-plan--complete::after{
+    content:"Best value";
+    position: absolute;
+    top: 5%;
+    right: -14%;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    background-color: #ffd43b;
+    padding: 0.8rem 4.8rem;
+    rotate: 45deg;
+}
+
+.feature-icon{
+    color: #e67e22;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-bottom: 3.2rem;
+    background-color: #f8d8bd;
+    padding: 1.6rem;
+    border-radius: 50%;
+}
+
+.feature-title{
+    font-size: 2.4rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+}
+
+.feature-text{
+    font-size: 1.8rem;
+    line-height: 1.8;
+    
+}
+
+
+/* ******************************* */
+/* CTA section */
+/* ******************************* */
+
+
+.cta{
+    display: grid;
+    /* 前一个2fr 后一个1fr */
+    grid-template-columns: 2fr 1fr;  
+    box-shadow: 0 4.8rem 6.4rem rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 4.8rem;
+    margin: 0 8rem;
+
+    
+}
+
+.cta-text-box{
+    padding: 6.4rem;
+    color: #2e1907;
+}
+
+.cta-text-box .heading-secondary{  /*使用后代继承器的方法时一定要加空格  不加空格的时候表示寻找同时具有两个类的元素*/
+    color: #2e1907;
+    margin-bottom: 1.6rem;
+}
+
+
+.cta-text{
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 2.4rem;
+}
+
+.cta-img-box{
+    background-image:  linear-gradient(to right bottom, rgba(235, 151, 78, 0.507), rgba(235, 153, 82, 0.408)),url(../img/eating.jpg);
+    /*../ 表示上一级目录*/
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+.cta-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3.2rem;
+    row-gap: 2.4rem;
+}
+
+.cta-form label{
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+}
+.cta-form input{
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+    color: inherit;
+    font-family: inherit;
+    border-radius: 9px;
+    box-shadow: 0 1px 2px rgba(110, 103, 103, 0.1);
+}
+
+.cta-form input::placeholder{
+    color: #666;
+
+}
+.cta-form select{
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+    color: inherit;
+    border-radius: 9px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+.btn.btn--form{
+    background-color: #45260a;
+    color: #fdf2e9;
+    align-self: end;
+    padding: 1.2rem;
+  }
+
+.btn.btn--form:hover{
+    background-color: #fff;
+    color: #45260a;
+
+}
+
+.cta *:focus{
+    outline: none;
+    box-shadow: 0 0 0 0.8rem rgba(230, 126, 34, 0.5);
+}
+
+/* ******************************* */
+/* footer section */
+/* ******************************* */
+
+
+
+.footer-heading{
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+}
+
+.logo-col{
+    display: flex;
+    flex-direction: column;
+    /* gap: 1.6rem; */
+}
+
+.copyright{
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #777;
+    margin-top: auto;
+
+}
+
+.footer-logo{
+    display: block;
+    margin-bottom: 3.2rem;
+}
+
+.social-links{
+    list-style: none;
+    display: flex;
+    gap: 2.4rem;
+
+}
+
+.social-icon{
+    height: 2.4rem;
+    width: 2.4rem;
+}
+
+
+.footer-link:link,
+.footer-link:visited{
+    text-decoration: none;
+    color: #777;
+    font-weight: 500;
+    font-size: 1.6rem;
+    transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active{
+    color: #cf711f;
+    font-weight: 500;
+    border-bottom: 1px solid currentColor;
+}
+
+.footer-nav{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+
+.contacts{
+    font-style: normal;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.address{
+    margin-bottom: 1.6rem;
+    color: #777;
+}
+
+.footer{
+    margin-top: 9.6rem;
+    padding: 4.8rem 0;
+    border-top: 2px solid #a15818;
+}
+
+
+.grid--footer{
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+
+
+
+
